@@ -2,3 +2,4 @@ replace_partf
 *.xml
 *.txt
 *.csv
+*.dSYM
