@@ -5,21 +5,25 @@ file with that in a comma-separated file (csv).  To run, change into your
 nucnet-tools-code directory and create a my_examples directory:
 
 cd nucnet-tools-code
+
 mkdir -p my_examples
 
 Change into the directory and clone the repository:
 
 cd my_examples
+
 git clone https://github.com/mbradle/replace_partf.git
 
 Change into the directory and make the code:
 
 cd replace_partf
+
 make replace_partf
 
 Get the data:
 
 make data
+
 cp fe.csv_example fe.csv
 
 Run the code (add optional source string such as " + new partf data"):
@@ -31,7 +35,9 @@ The updated data are in out.xml.  To view, use libnucnet example codes
 https://sourceforge.net/u/mbradle/blog/2012/07/running-libnucnet-examples/):
 
 cd ../../build
+
 make -f Makefile.libnucnet all_libnucnet
+
 cd ../my_examples/replace_partf
 
 Print out the nuclides that changed:
