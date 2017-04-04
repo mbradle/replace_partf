@@ -30,9 +30,7 @@ Run the code (add optional source string such as " + new partf data"):
 
 ./replace_partf ../../data_pub/my_net.xml fe.csv out.xml " + new partf data"
 
-The updated data are in out.xml.  To view, use libnucnet example codes
-(see
-https://sourceforge.net/u/mbradle/blog/2012/07/running-libnucnet-examples/):
+The updated data are in out.xml.  To view, use libnucnet example codes (see https://sourceforge.net/u/mbradle/blog/2012/07/running-libnucnet-examples/):
 
 cd ../../build
 
