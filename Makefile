@@ -1,5 +1,5 @@
 #///////////////////////////////////////////////////////////////////////////////
-#  Copyright (c) 2011-2014 Clemson University.
+#  Copyright (c) 2017 Clemson University.
 # 
 #  This file was originally written by Bradley S. Meyer.
 # 
@@ -23,7 +23,7 @@
 #///////////////////////////////////////////////////////////////////////////////
 #//!
 #//! \file
-#//! \brief A makefile to generate miscellaneous examples.
+#//! \brief A makefile to generate replace_partf code.
 #//!
 #///////////////////////////////////////////////////////////////////////////////
 
@@ -53,17 +53,6 @@ VPATH = $(BUILD_DIR):$(NNT_DIR):$(USER_DIR)
 MISC_OBJ = $(WN_OBJ)         \
            $(USER_OBJ)       \
            $(NNT_OBJ)	     \
-
-#===============================================================================
-# my_user routines, if desired.
-#===============================================================================
-
-ifdef NNT_MY_USER
-  include $(MY_USER_DIR)/Makefile.inc
-  VPATH += :$(MY_USER_DIR)
-  MISC_OBJ += $(MY_USER_OBJ)
-  CC += -DMY_USER
-endif
 
 #===============================================================================
 # Executables.
