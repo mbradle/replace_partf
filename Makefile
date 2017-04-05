@@ -33,8 +33,6 @@ endif
 
 NNT_DIR = $(NUCNET_TARGET)/nnt
 BUILD_DIR = $(NUCNET_TARGET)/build
-USER_DIR = $(NUCNET_TARGET)/user
-MY_USER_DIR = $(NUCNET_TARGET)/my_user
 
 #///////////////////////////////////////////////////////////////////////////////
 # End of lines to be edited.
@@ -42,37 +40,34 @@ MY_USER_DIR = $(NUCNET_TARGET)/my_user
 
 include $(BUILD_DIR)/Makefile
 
-include $(USER_DIR)/Makefile.inc
-
-VPATH = $(BUILD_DIR):$(NNT_DIR):$(USER_DIR)
+VPATH = $(BUILD_DIR):$(NNT_DIR)
 
 #===============================================================================
 # Objects.
 #===============================================================================
 
-MISC_OBJ = $(WN_OBJ)         \
-           $(USER_OBJ)       \
+REPF_OBJ = $(WN_OBJ)         \
            $(NNT_OBJ)	     \
 
 #===============================================================================
 # Executables.
 #===============================================================================
 
-MISC_EXEC = replace_partf \
+REPF_EXEC = replace_partf \
 
-$(MISC_EXEC): $(MISC_OBJ)
-	$(CC) $(MISC_OBJ) -o $(BINDIR)/$@ $@.cpp $(CLIBS)
+$(REPF_EXEC): $(REPF_OBJ)
+	$(CC) $(REPF_OBJ) -o $(BINDIR)/$@ $@.cpp $(CLIBS)
 
-.PHONY all_misc: $(MISC_EXEC) 
+.PHONY all_replace_partf: $(REPF_EXEC) 
 
 #===============================================================================
 # Clean up. 
 #===============================================================================
 
-.PHONY: clean_misc cleanall_misc
+.PHONY: clean_replace_partf cleanall_replace_partf
 
-clean_misc:
-	rm -f $(MISC_OBJ)
+clean_replace_partf:
+	rm -f $(REPF_OBJ)
 
-cleanall_misc: clean_misc
-	rm -f $(BINDIR)/$(MISC_EXEC) $(BINDIR)/$(MISC_EXEC).exe
+cleanall_replace_partf: clean_replace_partf
+	rm -f $(BINDIR)/$(REPF_EXEC) $(BINDIR)/$(REPF_EXEC).exe
