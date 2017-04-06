@@ -143,10 +143,8 @@ int main( int argc, char * argv[] ) {
   // Loop over lines to end.
   //============================================================================
 
-  while( !infile.eof() )
+  while( std::getline( infile, line ) )
   {
-
-    std::getline( infile, line );
 
     tokenizer tok( line, sep );
 
