@@ -53,7 +53,8 @@ REPF_OBJ = $(WN_OBJ)         \
 # Executables.
 #===============================================================================
 
-REPF_EXEC = replace_partf \
+REPF_EXEC = replace_partf       \
+            print_partf_at_t9   \
 
 $(REPF_EXEC): $(REPF_OBJ)
 	$(CC) $(REPF_OBJ) -o $(BINDIR)/$@ $@.cpp $(CLIBS)
